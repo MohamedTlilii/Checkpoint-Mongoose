@@ -53,8 +53,8 @@ app.get("/persons", async (req, res) => {
   try {
     let data = await Person.find()
       .sort({ age: "desc" })
-      .limit(2)
-      .select("-favoriteFoods -name");
+      // .limit(2)
+      // .select("-favoriteFoods -name");
     res.status(200).json({ status: true, data });
   } catch (error) {
     if (error) throw error;
